@@ -131,6 +131,9 @@
   .meta { display: grid; grid-template-columns: 140px 1fr; row-gap: 16px; max-width: 520px; font-size: 16px; }
   .meta .label { color: var(--muted-ink); font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px; padding-top: 3px; }
 
+  .contact-form { margin-top: 36px; max-width: 520px; }
+  .contact-form .label { color: var(--muted-ink); font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px; margin: 0 0 16px; }
+
   /* ---------- Mobile nav (hamburger drawer) ---------- */
   .nav-toggle-bar { display: none; }
   @media (max-width: 780px) {
@@ -235,11 +238,15 @@
     <div class="meta">
       <div class="label">Location</div>
       <span>Vienna, Austria</span>
-      <div class="label">Email</div>
-      <a href="mailto:hello@koslitsch.com">hello@koslitsch.com</a>
       <div class="label">Instagram</div>
       <a href="https://www.instagram.com/koslitsch/">@koslitsch</a>
     </div>
+
+    <div class="contact-form">
+      <p class="label">Message</p>
+      <iframe data-tally-src="https://tally.so/embed/xXGaoy?alignLeft=1&amp;hideTitle=1&amp;transparentBackground=1&amp;dynamicHeight=1" loading="lazy" width="100%" height="437" frameborder="0" marginheight="0" marginwidth="0" title="Contact Ernst Koslitsch"></iframe>
+    </div>
+
     <footer class="page-foot">
       Ernst Koslitsch, Vienna<br>
       Made by Catapult Contemporary, Artist Alliance Network. <a href="https://www.catapult-platform.art/write-us/" style="text-decoration:underline;">Get in touch &#8594;</a>
@@ -293,6 +300,19 @@
     if (window.innerWidth > 780) closeNav();
   });
 })();
+</script>
+<script>
+  var d = document, w = "https://tally.so/widgets/embed.js", v = function () {
+    "undefined" != typeof Tally ? Tally.loadEmbeds() : d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach(function (e) {
+      e.src = e.dataset.tallySrc;
+    });
+  };
+  if ("undefined" != typeof Tally) v();
+  else if (d.querySelector('script[src="' + w + '"]') == null) {
+    var s = d.createElement("script");
+    s.src = w; s.onload = v; s.onerror = v;
+    d.body.appendChild(s);
+  }
 </script>
 </body>
 </html>
