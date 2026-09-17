@@ -1,0 +1,27 @@
+# Ernst Koslitsch
+
+> Vienna-based sculptor. Yellow Universe — sculptural practice using yellow construction-grade formwork timber, cut by hand, drawing on construction-site material and vernacular carpentry.
+
+## Current
+
+- [Ernst Koslitsch — Archive](https://koslitsch.com/): Current and upcoming exhibitions.
+- [Cosmic Trigger – Respawn](https://koslitsch.com/cosmic-trigger-respawn.html): Solo presentation, Bildraum 07, Vienna, 2026.
+
+## About
+
+- [About](https://koslitsch.com/about.html): Biography.
+- [CV](https://koslitsch.com/cv.html): Full exhibition history, education, collections.
+- [Contact](https://koslitsch.com/contact.html)
+
+## Works and exhibitions
+
+- [Works](https://koslitsch.com/works.html): Overview across sculpture, painting and installation.
+- [Exhibitions](https://koslitsch.com/exhibitions.html): Full exhibition archive.
+- [Studio](https://koslitsch.com/studio.html): Studio views and works in progress.
+- [Großer gelber Vogelbaum](https://koslitsch.com/vogelbaum-esterhazy.html): Permanent installation, Hotel Galántha, Eisenstadt, Esterházy Collection, 2024.
+- [EX-SITU](https://koslitsch.com/ex-situ.html): Nationalmuseum Sarajevo, curated for rotor, Graz, 2024.
+- [It doesn't have to concern you what I believe](https://koslitsch.com/domino-no-concern.html): Domino Exhibition Series, Gallery Raum mit Licht, Vienna, 2021.
+
+## Notes
+
+Static site, no CMS. Exhibition subpages carry structured data (schema.org ExhibitionEvent / VisualArtwork) with venue, date and material details.
