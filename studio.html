@@ -151,11 +151,73 @@
   .lightbox-inner .lb-link { font-size: 15px; }
   .lb-nav { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
   .lb-nav button { background: none; border: 1px solid var(--line); color: var(--ink); font-size: 20px; padding: 4px 14px; cursor: pointer; }
+
+  /* ---------- Mobile nav (hamburger drawer) ---------- */
+  .nav-toggle-bar { display: none; }
+  @media (max-width: 780px) {
+    .nav-toggle-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 150;
+      background: var(--bg);
+      border-bottom: 1px solid var(--line);
+      padding: 14px 20px;
+      padding-top: calc(14px + env(safe-area-inset-top, 0px));
+    }
+    .nav-toggle-bar .wordmark-mini { font-size: 18px; margin: 0; }
+    .nav-toggle-bar .wordmark-mini a { color: inherit; }
+    .nav-toggle-btn {
+      background: none;
+      border: 1px solid var(--line);
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      color: var(--ink);
+      padding: 0;
+      flex: none;
+    }
+    .nav-toggle-btn svg { width: 20px; height: 20px; display: block; }
+    aside.sidebar {
+      position: fixed;
+      inset: 0;
+      z-index: 200;
+      overflow-y: auto;
+      background: var(--bg);
+      transform: translateX(-100%);
+      transition: transform 0.25s ease;
+      padding-top: calc(20px + env(safe-area-inset-top, 0px));
+    }
+    aside.sidebar.nav-open { transform: translateX(0); }
+    body.nav-locked { overflow: hidden; }
+    .sidebar-close { display: flex; justify-content: flex-end; margin-bottom: 8px; }
+    .sidebar-close button {
+      background: none; border: none; font-size: 28px; line-height: 1; color: var(--ink); cursor: pointer; padding: 4px 8px;
+    }
+  }
+  @media (min-width: 781px) {
+    .sidebar-close { display: none; }
+  }
 </style>
 </head>
 <body>
 <div class="shell">
-  <aside class="sidebar">
+
+  <div class="nav-toggle-bar">
+    <p class="wordmark-mini"><a href="index.html">Ernst Koslitsch</a></p>
+    <button class="nav-toggle-btn" id="navToggleBtn" aria-label="Open menu" aria-expanded="false" aria-controls="siteSidebar" type="button">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+  
+  <aside class="sidebar" id="siteSidebar">
+    <div class="sidebar-close"><button id="navCloseBtn" aria-label="Close menu" type="button">&times;</button></div>
+    
     <div>
       <p class="wordmark"><a href="index.html">Ernst Koslitsch</a></p>
       <p class="practice-line">Yellow Universe &#8212; Vienna</p>
@@ -194,46 +256,46 @@
     <p class="intro">Studio views and works in progress, 2014 to 2024, from early wall pieces through to the Yellow Universe wall sculptures. Ordered chronologically, most recent first, where the year is known.</p>
     <div class="grid">
     <figure onclick="openLightbox(this)" data-title="The First 5000 Years (Version 3)" data-meta="Studio view, 2024" data-credit="" data-link="ex-situ.html" data-linktext="Part of: EX-SITU &#8594;">
-      <span class="thumb"><img src="images/work-exsitu-studio-01-building-wall.webp" alt="Studio corner with a wide wall installation of small painted wood cutout figures in progress, work for EX-SITU, Nationalmuseum Sarajevo" loading="lazy"></span>
+      <span class="thumb"><img src="images/work-exsitu-studio-01-building-wall.webp" alt="Studio corner with a wide wall installation of small painted wood cutout figures in progress, work for EX-SITU, Nationalmuseum Sarajevo, Ernst Koslitsch" loading="lazy"></span>
       <figcaption>The First 5000 Years (Version 3), studio view &#8212; shown at EX-SITU</figcaption>
       <a class="studio-xlink" href="ex-situ.html">Part of: EX-SITU &#8594;</a>
     </figure>
     <figure onclick="openLightbox(this)" data-title="The First 5000 Years (Version 3)" data-meta="Studio view, 2024" data-credit="" data-link="ex-situ.html" data-linktext="Part of: EX-SITU &#8594;">
-      <span class="thumb"><img src="images/work-exsitu-studio-02-wall-detail.webp" alt="Studio wall covered with small painted wood cutout figures arranged with numbered tags, work in progress for EX-SITU" loading="lazy"></span>
+      <span class="thumb"><img src="images/work-exsitu-studio-02-wall-detail.webp" alt="Studio wall covered with small painted wood cutout figures arranged with numbered tags, work in progress for EX-SITU, Ernst Koslitsch" loading="lazy"></span>
       <figcaption>The First 5000 Years (Version 3), studio view, 2024</figcaption>
       <a class="studio-xlink" href="ex-situ.html">Part of: EX-SITU &#8594;</a>
     </figure>
     <figure onclick="openLightbox(this)" data-title="The First 5000 Years (Version 3), detail" data-meta="2024" data-credit="" data-link="ex-situ.html" data-linktext="Part of: EX-SITU &#8594;">
-      <span class="thumb"><img src="images/work-exsitu-studio-03-making-detail.webp" alt="Close-up detail of painted wood cutout figures on a studio wall, numbered tags for arranging the installation" loading="lazy"></span>
+      <span class="thumb"><img src="images/work-exsitu-studio-03-making-detail.webp" alt="Close-up detail of painted wood cutout figures on a studio wall, numbered tags for arranging the installation, Ernst Koslitsch" loading="lazy"></span>
       <figcaption>Detail, in the making, 2024</figcaption>
       <a class="studio-xlink" href="ex-situ.html">Part of: EX-SITU &#8594;</a>
     </figure>
     <figure onclick="openLightbox(this)" data-title="Studio view" data-meta="Preparing for EX-SITU, 2024" data-credit="" data-link="ex-situ.html" data-linktext="Part of: EX-SITU &#8594;">
-      <span class="thumb"><img src="images/work-exsitu-studio-04-workbench.webp" alt="Workbench with tools, wood offcuts and packing crates below a wall of small painted wood figures, studio view" loading="lazy"></span>
+      <span class="thumb"><img src="images/work-exsitu-studio-04-workbench.webp" alt="Workbench with tools, wood offcuts and packing crates below a wall of small painted wood figures, studio view, Ernst Koslitsch" loading="lazy"></span>
       <figcaption>Studio view, preparing for EX-SITU, 2024</figcaption>
       <a class="studio-xlink" href="ex-situ.html">Part of: EX-SITU &#8594;</a>
     </figure>
     <figure onclick="openLightbox(this)" data-title="Figure detail" data-meta="The First 5000 Years (Version 3), 2024" data-credit="" data-link="ex-situ.html" data-linktext="Part of: EX-SITU &#8594;">
-      <span class="thumb"><img src="images/work-exsitu-studio-05-figure-bird.webp" alt="Single blue and yellow bird-shaped painted wood cutout figure on a plain background" loading="lazy"></span>
+      <span class="thumb"><img src="images/work-exsitu-studio-05-figure-bird.webp" alt="Single blue and yellow bird-shaped painted wood cutout figure on a plain background, Ernst Koslitsch" loading="lazy"></span>
       <figcaption>Figure detail, The First 5000 Years (Version 3), 2024</figcaption>
       <a class="studio-xlink" href="ex-situ.html">Part of: EX-SITU &#8594;</a>
     </figure>
     <figure onclick="openLightbox(this)" data-title="Figure detail" data-meta="The First 5000 Years (Version 3), 2024" data-credit="" data-link="ex-situ.html" data-linktext="Part of: EX-SITU &#8594;">
-      <span class="thumb"><img src="images/work-exsitu-studio-06-figure-red.webp" alt="Single tall red and yellow painted wood cutout figure on a plain background" loading="lazy"></span>
+      <span class="thumb"><img src="images/work-exsitu-studio-06-figure-red.webp" alt="Single tall red and yellow painted wood cutout figure on a plain background, Ernst Koslitsch" loading="lazy"></span>
       <figcaption>Figure detail, The First 5000 Years (Version 3), 2024</figcaption>
       <a class="studio-xlink" href="ex-situ.html">Part of: EX-SITU &#8594;</a>
     </figure>
     <figure onclick="openLightbox(this)" data-title="Figure detail" data-meta="The First 5000 Years (Version 3), 2024" data-credit="" data-link="ex-situ.html" data-linktext="Part of: EX-SITU &#8594;">
-      <span class="thumb"><img src="images/work-exsitu-studio-07-figure-yellow.webp" alt="Single yellow painted wood cutout figure with teal wing-like arms on a plain background" loading="lazy"></span>
+      <span class="thumb"><img src="images/work-exsitu-studio-07-figure-yellow.webp" alt="Single yellow painted wood cutout figure with teal wing-like arms on a plain background, Ernst Koslitsch" loading="lazy"></span>
       <figcaption>Figure detail, The First 5000 Years (Version 3), 2024</figcaption>
       <a class="studio-xlink" href="ex-situ.html">Part of: EX-SITU &#8594;</a>
     </figure>
     <figure onclick="openLightbox(this)" data-title="Work in progress" data-meta="Studio, 2024" data-credit="" data-link="" data-linktext="">
-      <span class="thumb"><img src="images/work-studio-03-making-2024.webp" alt="Large yellow wood wall sculpture in progress in the studio, 2024" loading="lazy"></span>
+      <span class="thumb"><img src="images/work-studio-03-making-2024.webp" alt="Large yellow wood wall sculpture in progress in the studio, 2024, Ernst Koslitsch" loading="lazy"></span>
       <figcaption>Work in progress, 2024</figcaption>
     </figure>
     <figure onclick="openLightbox(this)" data-title="Wall of figures" data-meta="2024" data-credit="" data-link="" data-linktext="">
-      <span class="thumb"><img src="images/work-studio-04-wall-figures-a.webp" alt="Wide wall installation of small painted wood cutout figures in the studio" loading="lazy"></span>
+      <span class="thumb"><img src="images/work-studio-04-wall-figures-a.webp" alt="Wide wall installation of small painted wood cutout figures in the studio, Ernst Koslitsch" loading="lazy"></span>
       <figcaption>Studio view, 2024</figcaption>
     </figure>
     <figure onclick="openLightbox(this)" data-title="Studio Show, Aumannplatz" data-meta="Vienna, 2023" data-credit="" data-link="" data-linktext="">
@@ -241,23 +303,23 @@
       <figcaption>Studio Show, Aumannplatz, Vienna, 2023</figcaption>
     </figure>
     <figure onclick="openLightbox(this)" data-title="Wall of figures" data-meta="2023" data-credit="" data-link="" data-linktext="">
-      <span class="thumb"><img src="images/work-studio-05-wall-figures-b.webp" alt="Wall of small painted wood cutout figures in the studio, with sofa and lamp" loading="lazy"></span>
+      <span class="thumb"><img src="images/work-studio-05-wall-figures-b.webp" alt="Wall of small painted wood cutout figures in the studio, with sofa and lamp, Ernst Koslitsch" loading="lazy"></span>
       <figcaption>Studio view, 2023</figcaption>
     </figure>
     <figure onclick="openLightbox(this)" data-title="Studio view" data-meta="2023" data-credit="" data-link="" data-linktext="">
-      <span class="thumb"><img src="images/work-studio-10-panel-d.webp" alt="Painted wood panel, red, orange and blue vertical strips, studio view" loading="lazy"></span>
+      <span class="thumb"><img src="images/work-studio-10-panel-d.webp" alt="Painted wood panel, red, orange and blue vertical strips, studio view, Ernst Koslitsch" loading="lazy"></span>
       <figcaption>Studio view, 2023</figcaption>
     </figure>
     <figure onclick="openLightbox(this)" data-title="Studio view" data-meta="2023" data-credit="" data-link="" data-linktext="">
-      <span class="thumb"><img src="images/work-studio-11-panel-e.webp" alt="Painted wood panel construction with spray paint marks, studio view" loading="lazy"></span>
+      <span class="thumb"><img src="images/work-studio-11-panel-e.webp" alt="Painted wood panel construction with spray paint marks, studio view, Ernst Koslitsch" loading="lazy"></span>
       <figcaption>Studio view, 2023</figcaption>
     </figure>
     <figure onclick="openLightbox(this)" data-title="Studio view" data-meta="Painting, 2023" data-credit="" data-link="" data-linktext="">
-      <span class="thumb"><img src="images/work-studio-12-painting.webp" alt="Colourful painting on canvas, studio view" loading="lazy"></span>
+      <span class="thumb"><img src="images/work-studio-12-painting.webp" alt="Colourful painting on canvas, studio view, Ernst Koslitsch" loading="lazy"></span>
       <figcaption>Studio view, painting, 2023</figcaption>
     </figure>
     <figure onclick="openLightbox(this)" data-title="Razzle Dazzle" data-meta="2023" data-credit="" data-link="" data-linktext="">
-      <span class="thumb"><img src="images/work-studio-18-razzle-dazzle.webp" alt="Razzle Dazzle, dense yellow wood grid sculpture with painted details, studio view" loading="lazy"></span>
+      <span class="thumb"><img src="images/work-studio-18-razzle-dazzle.webp" alt="Razzle Dazzle, dense yellow wood grid sculpture with painted details, studio view, Ernst Koslitsch" loading="lazy"></span>
       <figcaption>Razzle Dazzle, studio view, 2023</figcaption>
     </figure>
     <figure onclick="openLightbox(this)" data-title="In the studio" data-meta="2023" data-credit="" data-link="" data-linktext="">
@@ -265,53 +327,53 @@
       <figcaption>In the studio, 2023</figcaption>
     </figure>
     <figure onclick="openLightbox(this)" data-title="Three figures" data-meta="2022" data-credit="" data-link="art-brussels-2022.html" data-linktext="Part of: Art Brussels 2022 &#8594;">
-      <span class="thumb"><img src="images/work-studio-06-red-figures-clean.webp" alt="Three red wood cutout figures, studio view" loading="lazy"></span>
+      <span class="thumb"><img src="images/work-studio-06-red-figures-clean.webp" alt="Three red wood cutout figures, studio view, Ernst Koslitsch" loading="lazy"></span>
       <figcaption>Studio view, 2022 &#8212; shown at Art Brussels 2022</figcaption>
       <a class="studio-xlink" href="art-brussels-2022.html">Part of: Art Brussels 2022 &#8594;</a>
     </figure>
     <figure onclick="openLightbox(this)" data-title="Hey U2, This Is the Last Night on Earth (Yellow Universe)!" data-meta="2022" data-credit="" data-link="beings-and-creatures-rotor.html" data-linktext="Part of: Beings &amp; Creatures &#8594;">
-      <span class="thumb"><img src="images/work-beings-studio-01.webp" alt="Studio wall covered with yellow wood cutout creature figures in progress, work for Beings &amp; Creatures, rotor, Graz" loading="lazy"></span>
+      <span class="thumb"><img src="images/work-beings-studio-01.webp" alt="Studio wall covered with yellow wood cutout creature figures in progress, work for Beings &amp; Creatures, rotor, Graz, Ernst Koslitsch" loading="lazy"></span>
       <figcaption>Studio view, 2022 &#8212; shown at Beings &amp; Creatures, rotor Graz</figcaption>
       <a class="studio-xlink" href="beings-and-creatures-rotor.html">Part of: Beings &amp; Creatures &#8594;</a>
     </figure>
     <figure onclick="openLightbox(this)" data-title="Hashtag Forever" data-meta="2022" data-credit="" data-link="" data-linktext="">
-      <span class="thumb"><img src="images/work-studio-16-hashtag-forever.webp" alt="Hashtag Forever, yellow and blue wood grid sculpture with small figures, studio view" loading="lazy"></span>
+      <span class="thumb"><img src="images/work-studio-16-hashtag-forever.webp" alt="Hashtag Forever, yellow and blue wood grid sculpture with small figures, studio view, Ernst Koslitsch" loading="lazy"></span>
       <figcaption>Hashtag Forever, studio view, 2022</figcaption>
     </figure>
     <figure onclick="openLightbox(this)" data-title="Studio view" data-meta="2022" data-credit="" data-link="" data-linktext="">
-      <span class="thumb"><img src="images/work-studio-17-shelf-assembly.webp" alt="Weathered wood figures arranged on horizontal shelves, studio view" loading="lazy"></span>
+      <span class="thumb"><img src="images/work-studio-17-shelf-assembly.webp" alt="Weathered wood figures arranged on horizontal shelves, studio view, Ernst Koslitsch" loading="lazy"></span>
       <figcaption>Studio view, 2022</figcaption>
     </figure>
     <figure onclick="openLightbox(this)" data-title="Studio view" data-meta="2016" data-credit="" data-link="" data-linktext="">
-      <span class="thumb"><img src="images/work-studio-07-panel-a.webp" alt="Painted wood wall panel, studio view" loading="lazy"></span>
+      <span class="thumb"><img src="images/work-studio-07-panel-a.webp" alt="Painted wood wall panel, studio view, Ernst Koslitsch" loading="lazy"></span>
       <figcaption>Studio view, 2016</figcaption>
     </figure>
     <figure onclick="openLightbox(this)" data-title="Studio view" data-meta="2016" data-credit="" data-link="" data-linktext="">
-      <span class="thumb"><img src="images/work-studio-08-panel-b.webp" alt="Painted wood wall panel with two legs, studio view" loading="lazy"></span>
+      <span class="thumb"><img src="images/work-studio-08-panel-b.webp" alt="Painted wood wall panel with two legs, studio view, Ernst Koslitsch" loading="lazy"></span>
       <figcaption>Studio view, 2016</figcaption>
     </figure>
     <figure onclick="openLightbox(this)" data-title="Studio view" data-meta="2016" data-credit="" data-link="" data-linktext="">
-      <span class="thumb"><img src="images/work-studio-09-panel-c.webp" alt="Painted wood panel construction, red and yellow, studio view" loading="lazy"></span>
+      <span class="thumb"><img src="images/work-studio-09-panel-c.webp" alt="Painted wood panel construction, red and yellow, studio view, Ernst Koslitsch" loading="lazy"></span>
       <figcaption>Studio view, 2016</figcaption>
     </figure>
     <figure onclick="openLightbox(this)" data-title="Studio view" data-meta="2016" data-credit="" data-link="" data-linktext="">
-      <span class="thumb"><img src="images/work-studio-13-panel-f.webp" alt="Grey, orange and yellow painted wood wall sculpture, studio view" loading="lazy"></span>
+      <span class="thumb"><img src="images/work-studio-13-panel-f.webp" alt="Grey, orange and yellow painted wood wall sculpture, studio view, Ernst Koslitsch" loading="lazy"></span>
       <figcaption>Studio view, 2016</figcaption>
     </figure>
     <figure onclick="openLightbox(this)" data-title="Studio view" data-meta="2015" data-credit="" data-link="" data-linktext="">
-      <span class="thumb"><img src="images/work-studio-15-frames.webp" alt="Wall sculpture made of empty wood frames, studio view" loading="lazy"></span>
+      <span class="thumb"><img src="images/work-studio-15-frames.webp" alt="Wall sculpture made of empty wood frames, studio view, Ernst Koslitsch" loading="lazy"></span>
       <figcaption>Studio view, 2015</figcaption>
     </figure>
     <figure onclick="openLightbox(this)" data-title="Flatland" data-meta="2015" data-credit="" data-link="" data-linktext="">
-      <span class="thumb"><img src="images/work-studio-19-flatland.webp" alt="Flatland, green and yellow painted wood panel, studio view" loading="lazy"></span>
+      <span class="thumb"><img src="images/work-studio-19-flatland.webp" alt="Flatland, green and yellow painted wood panel, studio view, Ernst Koslitsch" loading="lazy"></span>
       <figcaption>Flatland, studio view, 2015</figcaption>
     </figure>
     <figure onclick="openLightbox(this)" data-title="Studio view" data-meta="Early work, 2014" data-credit="" data-link="" data-linktext="">
-      <span class="thumb"><img src="images/work-studio-14-figures-early.webp" alt="Two simple yellow wood standing figures, studio view" loading="lazy"></span>
+      <span class="thumb"><img src="images/work-studio-14-figures-early.webp" alt="Two simple yellow wood standing figures, studio view, Ernst Koslitsch" loading="lazy"></span>
       <figcaption>Studio view, 2014</figcaption>
     </figure>
     <figure onclick="openLightbox(this)" data-title="Yellow Universe wall sculpture" data-meta="Studio view" data-credit="" data-link="" data-linktext="">
-      <span class="thumb"><img src="images/work-studio-01-yellow-circle.webp" alt="Large circular Yellow Universe wall sculpture on a wooden stand in the studio" loading="lazy"></span>
+      <span class="thumb"><img src="images/work-studio-01-yellow-circle.webp" alt="Large circular Yellow Universe wall sculpture on a wooden stand in the studio, Ernst Koslitsch" loading="lazy"></span>
       <figcaption>Studio view</figcaption>
     </figure>
     </div>
@@ -396,6 +458,37 @@ lbEl.addEventListener('touchend', function(e) {
   if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) navLightbox(dx < 0 ? 1 : -1);
   lbTouchStartX = null; lbTouchStartY = null;
 }, {passive: true});
+</script>
+<script>
+(function () {
+  var toggleBtn = document.getElementById('navToggleBtn');
+  var closeBtn = document.getElementById('navCloseBtn');
+  var sidebar = document.getElementById('siteSidebar');
+  if (!toggleBtn || !sidebar) return;
+  function openNav() {
+    sidebar.classList.add('nav-open');
+    document.body.classList.add('nav-locked');
+    toggleBtn.setAttribute('aria-expanded', 'true');
+  }
+  function closeNav() {
+    sidebar.classList.remove('nav-open');
+    document.body.classList.remove('nav-locked');
+    toggleBtn.setAttribute('aria-expanded', 'false');
+  }
+  toggleBtn.addEventListener('click', function () {
+    if (sidebar.classList.contains('nav-open')) closeNav(); else openNav();
+  });
+  if (closeBtn) closeBtn.addEventListener('click', closeNav);
+  Array.prototype.forEach.call(sidebar.querySelectorAll('a'), function (a) {
+    a.addEventListener('click', closeNav);
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') closeNav();
+  });
+  window.addEventListener('resize', function () {
+    if (window.innerWidth > 780) closeNav();
+  });
+})();
 </script>
 </body>
 </html>

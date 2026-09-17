@@ -165,12 +165,74 @@
   @media (prefers-reduced-motion: reduce) {
     .to-top { transition: none; }
   }
+
+  /* ---------- Mobile nav (hamburger drawer) ---------- */
+  .nav-toggle-bar { display: none; }
+  @media (max-width: 780px) {
+    .nav-toggle-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 150;
+      background: var(--bg);
+      border-bottom: 1px solid var(--line);
+      padding: 14px 20px;
+      padding-top: calc(14px + env(safe-area-inset-top, 0px));
+    }
+    .nav-toggle-bar .wordmark-mini { font-size: 18px; margin: 0; }
+    .nav-toggle-bar .wordmark-mini a { color: inherit; }
+    .nav-toggle-btn {
+      background: none;
+      border: 1px solid var(--line);
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      color: var(--ink);
+      padding: 0;
+      flex: none;
+    }
+    .nav-toggle-btn svg { width: 20px; height: 20px; display: block; }
+    aside.sidebar {
+      position: fixed;
+      inset: 0;
+      z-index: 200;
+      overflow-y: auto;
+      background: var(--bg);
+      transform: translateX(-100%);
+      transition: transform 0.25s ease;
+      padding-top: calc(20px + env(safe-area-inset-top, 0px));
+    }
+    aside.sidebar.nav-open { transform: translateX(0); }
+    body.nav-locked { overflow: hidden; }
+    .sidebar-close { display: flex; justify-content: flex-end; margin-bottom: 8px; }
+    .sidebar-close button {
+      background: none; border: none; font-size: 28px; line-height: 1; color: var(--ink); cursor: pointer; padding: 4px 8px;
+    }
+  }
+  @media (min-width: 781px) {
+    .sidebar-close { display: none; }
+  }
 </style>
 </head>
 <body>
 <div class="shell">
 
-  <aside class="sidebar">
+  <div class="nav-toggle-bar">
+    <p class="wordmark-mini"><a href="index.html">Ernst Koslitsch</a></p>
+    <button class="nav-toggle-btn" id="navToggleBtn" aria-label="Open menu" aria-expanded="false" aria-controls="siteSidebar" type="button">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+  
+
+  <aside class="sidebar" id="siteSidebar">
+    <div class="sidebar-close"><button id="navCloseBtn" aria-label="Close menu" type="button">&times;</button></div>
+    
     <div>
       <p class="wordmark"><a href="index.html">Ernst Koslitsch</a></p>
       <p class="practice-line">Yellow Universe &#8212; Vienna</p>
@@ -307,12 +369,30 @@
           <p class="date">2022&#8211;2023</p>
         </a>
       </article>
+      <article class="entry">
+        <a href="au-platz-neu-verhandelt.html">
+          <span class="entry-thumb"><img src="images/work-auplatz-03-ernst-interview.webp" alt="Ernst Koslitsch at the AU installation on Aumannplatz, Vienna" loading="lazy"></span>
+          <span class="cat">Public space intervention</span>
+          <h2>AU&#8230; Ein Platz wird neu verhandelt</h2>
+          <p class="venue">Aumannplatz, Vienna, organized by K&#214;R, presented by Kulturdrogerie</p>
+          <p class="date">2022</p>
+        </a>
+      </article>
       <article class="entry" id="apeiron">
         <a href="apeiron-vilnius.html">
           <span class="entry-thumb"><img src="images/work-apeiron-01-spotlit.webp" alt="The First 5000 Years, wall-filling sculpture by Ernst Koslitsch, APEIRON, Radvila Palace Museum of Art, Vilnius" loading="lazy"></span>
           <span class="cat">Group exhibition</span>
           <h2>APEIRON, Why Austrians Now</h2>
           <p class="venue">The Radvila Palace Museum of Art, Vilnius, curated by Lina Albrikienė</p>
+          <p class="date">2021</p>
+        </a>
+      </article>
+      <article class="entry">
+        <a href="spark-art-fair-vienna.html">
+          <span class="entry-thumb"><img src="images/work-spark-06-booth-label.webp" alt="Booth view, Gallery Raum mit Licht, Ernst Koslitsch, Spark Art Fair Vienna" loading="lazy"></span>
+          <span class="cat">Solo presentation</span>
+          <h2>Yellow Universe &#8212; Spark Art Fair Vienna</h2>
+          <p class="venue">Spark Art Fair, Marx Halle, Vienna, with Gallery Raum mit Licht, curated by Josephine Wagner</p>
           <p class="date">2021</p>
         </a>
       </article>
@@ -326,8 +406,17 @@
         </a>
       </article>
       <article class="entry">
+        <a href="parallel-vienna-semmelweis-klinik.html">
+          <span class="entry-thumb"><img src="images/work-parallel-vienna-03-sculpture.webp" alt="Come with me if you want to live, wood sculpture, Ernst Koslitsch, Parallel Vienna, Semmelweis Klinik" loading="lazy"></span>
+          <span class="cat">Art fair</span>
+          <h2>Come with me if you want to live</h2>
+          <p class="venue">Parallel Vienna, Semmelweis Klinik, Vienna</p>
+          <p class="date">2021</p>
+        </a>
+      </article>
+      <article class="entry">
         <a href="domino-no-concern.html">
-          <span class="entry-thumb"><img src="images/work-domino-02-installation.webp" alt="Installation view, It doesn't have to concern you what I believe, Gallery Raum mit Licht, Vienna" loading="lazy"></span>
+          <span class="entry-thumb"><img src="images/work-domino-02-installation.webp" alt="Installation view, It doesn't have to concern you what I believe, Gallery Raum mit Licht, Vienna, Ernst Koslitsch" loading="lazy"></span>
           <span class="cat">Solo exhibition</span>
           <h2>It doesn't have to concern you what I believe</h2>
           <p class="venue">Gallery Raum mit Licht, Vienna &#8212; Domino Exhibition Series</p>
@@ -336,7 +425,7 @@
       </article>
       <article class="entry">
         <a href="we-have-to-move-the-island.html">
-          <span class="entry-thumb"><img src="images/work-wehavetomove-01.webp" alt="Installation view, We Have to Move the Island, Gallery Raum mit Licht, Vienna" loading="lazy"></span>
+          <span class="entry-thumb"><img src="images/work-wehavetomove-01.webp" alt="Installation view, We Have to Move the Island, Gallery Raum mit Licht, Vienna, Ernst Koslitsch" loading="lazy"></span>
           <span class="cat">Solo exhibition</span>
           <h2>We Have to Move the Island</h2>
           <p class="venue">Gallery Raum mit Licht, Vienna</p>
@@ -367,6 +456,37 @@
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   })();
+</script>
+<script>
+(function () {
+  var toggleBtn = document.getElementById('navToggleBtn');
+  var closeBtn = document.getElementById('navCloseBtn');
+  var sidebar = document.getElementById('siteSidebar');
+  if (!toggleBtn || !sidebar) return;
+  function openNav() {
+    sidebar.classList.add('nav-open');
+    document.body.classList.add('nav-locked');
+    toggleBtn.setAttribute('aria-expanded', 'true');
+  }
+  function closeNav() {
+    sidebar.classList.remove('nav-open');
+    document.body.classList.remove('nav-locked');
+    toggleBtn.setAttribute('aria-expanded', 'false');
+  }
+  toggleBtn.addEventListener('click', function () {
+    if (sidebar.classList.contains('nav-open')) closeNav(); else openNav();
+  });
+  if (closeBtn) closeBtn.addEventListener('click', closeNav);
+  Array.prototype.forEach.call(sidebar.querySelectorAll('a'), function (a) {
+    a.addEventListener('click', closeNav);
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') closeNav();
+  });
+  window.addEventListener('resize', function () {
+    if (window.innerWidth > 780) closeNav();
+  });
+})();
 </script>
 </body>
 </html>

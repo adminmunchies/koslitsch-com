@@ -154,11 +154,73 @@
   .cv-list a.row:hover .etitle { text-decoration: underline; text-underline-offset: 3px; }
   .cv-list .venue { color: var(--muted-ink); font-size: 14px; margin-top: 3px; }
   .cv-list .year { color: var(--muted-ink); font-size: 14px; white-space: nowrap; padding-top: 1px; }
+
+  /* ---------- Mobile nav (hamburger drawer) ---------- */
+  .nav-toggle-bar { display: none; }
+  @media (max-width: 780px) {
+    .nav-toggle-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 150;
+      background: var(--bg);
+      border-bottom: 1px solid var(--line);
+      padding: 14px 20px;
+      padding-top: calc(14px + env(safe-area-inset-top, 0px));
+    }
+    .nav-toggle-bar .wordmark-mini { font-size: 18px; margin: 0; }
+    .nav-toggle-bar .wordmark-mini a { color: inherit; }
+    .nav-toggle-btn {
+      background: none;
+      border: 1px solid var(--line);
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      color: var(--ink);
+      padding: 0;
+      flex: none;
+    }
+    .nav-toggle-btn svg { width: 20px; height: 20px; display: block; }
+    aside.sidebar {
+      position: fixed;
+      inset: 0;
+      z-index: 200;
+      overflow-y: auto;
+      background: var(--bg);
+      transform: translateX(-100%);
+      transition: transform 0.25s ease;
+      padding-top: calc(20px + env(safe-area-inset-top, 0px));
+    }
+    aside.sidebar.nav-open { transform: translateX(0); }
+    body.nav-locked { overflow: hidden; }
+    .sidebar-close { display: flex; justify-content: flex-end; margin-bottom: 8px; }
+    .sidebar-close button {
+      background: none; border: none; font-size: 28px; line-height: 1; color: var(--ink); cursor: pointer; padding: 4px 8px;
+    }
+  }
+  @media (min-width: 781px) {
+    .sidebar-close { display: none; }
+  }
 </style>
 </head>
 <body>
 <div class="shell">
-  <aside class="sidebar">
+
+  <div class="nav-toggle-bar">
+    <p class="wordmark-mini"><a href="index.html">Ernst Koslitsch</a></p>
+    <button class="nav-toggle-btn" id="navToggleBtn" aria-label="Open menu" aria-expanded="false" aria-controls="siteSidebar" type="button">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+  
+  <aside class="sidebar" id="siteSidebar">
+    <div class="sidebar-close"><button id="navCloseBtn" aria-label="Close menu" type="button">&times;</button></div>
+    
     <div>
       <p class="wordmark"><a href="index.html">Ernst Koslitsch</a></p>
       <p class="practice-line">Yellow Universe &#8212; Vienna</p>
@@ -231,10 +293,10 @@
       </div>
     </li>
     <li>
-      <div class="row">
+      <a class="row" href="parallel-vienna-semmelweis-klinik.html">
         <div><div class="etitle">Come with me if you want to live, artist statement at Parallel Vienna</div><div class="venue">Semmelweis Klinik, Vienna</div></div>
         <div class="year">2021</div>
-      </div>
+      </a>
     </li>
     <li>
       <a class="row" href="we-have-to-move-the-island.html">
@@ -258,12 +320,6 @@
       </a>
     </li>
     <li>
-      <div class="row">
-        <div><div class="etitle">Kunsttausch</div><div class="venue">Forum Stadtpark, Graz, curated by zweintopf</div></div>
-        <div class="year">2026</div>
-      </div>
-    </li>
-    <li>
       <a class="row" href="transfer-deutschlandsberg.html">
         <div><div class="etitle">TRANSFER</div><div class="venue">Kulturforum La&#223;nitzhaus, Deutschlandsberg, curated by Anja Weisi-Michelitsch, Roman Grabner</div></div>
         <div class="year">2026</div>
@@ -274,6 +330,12 @@
         <div><div class="etitle">A Parable for Endings and Beginnings We Don't Know Yet, Part 1: The Giant Bird</div><div class="venue">rotor, Graz, curated by Margarethe Makovec, Anton Lederer, May 2026</div></div>
         <div class="year">2026</div>
       </a>
+    </li>
+    <li>
+      <div class="row">
+        <div><div class="etitle">Kunsttausch</div><div class="venue">Forum Stadtpark, Graz, curated by zweintopf</div></div>
+        <div class="year">2025</div>
+      </div>
     </li>
     <li>
       <a class="row" href="https://www.kultur.steiermark.at/cms/beitrag/11117251/166298034/">
@@ -306,10 +368,10 @@
       </a>
     </li>
     <li>
-      <div class="row">
-        <div><div class="etitle">Intervention: EIN PLATZ WIRD NEU VERHANDELT</div><div class="venue">Kulturdrogerie</div></div>
+      <a class="row" href="au-platz-neu-verhandelt.html">
+        <div><div class="etitle">AU&#8230; Ein Platz wird neu verhandelt</div><div class="venue">Aumannplatz, Vienna, organized by K&#214;R &#8211; Kunst im &#246;ffentlichen Raum Wien, presented by Kulturdrogerie</div></div>
         <div class="year">2022</div>
-      </div>
+      </a>
     </li>
     <li>
       <a class="row" href="apeiron-vilnius.html">
@@ -384,16 +446,16 @@
       </a>
     </li>
     <li>
-      <div class="row">
-        <div><div class="etitle">Yellow Universe, solo presentation with Gallery Raum mit Licht</div><div class="venue">Spark Art Fair, Vienna, curated by Josephine Wagner</div></div>
+      <a class="row" href="spark-art-fair-vienna.html">
+        <div><div class="etitle">Yellow Universe, solo presentation with Gallery Raum mit Licht</div><div class="venue">Spark Art Fair, Marx Halle, Vienna, curated by Josephine Wagner</div></div>
         <div class="year">2021</div>
-      </div>
+      </a>
     </li>
     <li>
-      <div class="row">
+      <a class="row" href="parallel-vienna-semmelweis-klinik.html">
         <div><div class="etitle">Parallel Vienna</div><div class="venue">Semmelweis Klinik, W&#228;hring, Vienna</div></div>
         <div class="year">2021</div>
-      </div>
+      </a>
     </li>
   </ul>
   <h2 class="section-title">Earlier work (photography), 2007&#8211;2019</h2>
@@ -505,6 +567,37 @@
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   })();
+</script>
+<script>
+(function () {
+  var toggleBtn = document.getElementById('navToggleBtn');
+  var closeBtn = document.getElementById('navCloseBtn');
+  var sidebar = document.getElementById('siteSidebar');
+  if (!toggleBtn || !sidebar) return;
+  function openNav() {
+    sidebar.classList.add('nav-open');
+    document.body.classList.add('nav-locked');
+    toggleBtn.setAttribute('aria-expanded', 'true');
+  }
+  function closeNav() {
+    sidebar.classList.remove('nav-open');
+    document.body.classList.remove('nav-locked');
+    toggleBtn.setAttribute('aria-expanded', 'false');
+  }
+  toggleBtn.addEventListener('click', function () {
+    if (sidebar.classList.contains('nav-open')) closeNav(); else openNav();
+  });
+  if (closeBtn) closeBtn.addEventListener('click', closeNav);
+  Array.prototype.forEach.call(sidebar.querySelectorAll('a'), function (a) {
+    a.addEventListener('click', closeNav);
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') closeNav();
+  });
+  window.addEventListener('resize', function () {
+    if (window.innerWidth > 780) closeNav();
+  });
+})();
 </script>
 </body>
 </html>
