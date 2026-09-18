@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Page Not Found &#8212; Ernst Koslitsch</title>
+<meta name="robots" content="noindex">
+<meta name="description" content="Page not found. Ernst Koslitsch, Vienna-based sculptor, Yellow Universe.">
+<style>
+  :root {
+    --bg: #ffffff;
+    --ink: #000000;
+    --line: #e6e4e0;
+    --muted: #ccccc8;
+    --muted-ink: #9a9891;
+    color-scheme: light;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.3;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration: none; }
+  img { max-width: 100%; }
+
+  .shell {
+    display: grid;
+    grid-template-columns: 340px 1fr;
+    min-height: 100svh;
+  }
+  @media (max-width: 780px) {
+    .shell { grid-template-columns: 1fr; }
+  }
+
+  .sidebar {
+    padding: 28px 32px 40px;
+    display: flex;
+    flex-direction: column;
+  }
+  @media (max-width: 780px) {
+    .sidebar { padding: 20px 20px 24px; }
+  }
+  .wordmark { font-size: 26px; font-weight: 400; margin: 0; }
+  .practice-line { font-size: 16px; color: var(--muted-ink); margin: 4px 0 0; }
+  .rule { border: none; border-top: 1px solid var(--line); margin: 22px 0; }
+  .nav-block { display: flex; flex-direction: column; gap: 2px; }
+  .nav-block a { font-size: 18px; font-weight: 400; padding: 3px 0; }
+  .nav-block a[aria-current="page"] { color: var(--muted-ink); }
+  .nav-block a.more { color: var(--muted-ink); font-size: 18px; margin-top: 2px; }
+  .nav-block.primary a { font-size: 18px; font-weight: 400; }
+  .nav-block.secondary a { font-size: 16px; font-weight: 400; color: var(--muted-ink); }
+  .nav-block.secondary a:hover { color: var(--ink); }
+  .sidebar-foot { margin-top: auto; padding-top: 20px; font-size: 13px; color: var(--muted-ink); }
+
+  main { padding: 28px 40px 100px; max-width: 1100px; }
+  @media (max-width: 780px) { main { padding: 24px 20px 80px; } }
+
+  h1.page-title {
+    font-size: 34px;
+    font-weight: 400;
+    margin: 0 0 28px;
+    text-wrap: balance;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 20px;
+  }
+
+  .not-found-text { font-size: 17px; line-height: 1.55; max-width: 560px; margin: 0 0 28px; color: var(--muted-ink); }
+
+  .not-found-links { display: flex; flex-direction: column; gap: 6px; max-width: 320px; }
+  .not-found-links a { font-size: 18px; padding: 3px 0; }
+  .not-found-links a:hover { color: var(--muted-ink); }
+
+  footer.page-foot {
+    margin-top: 40px;
+    padding-top: 18px;
+    border-top: 1px solid var(--line);
+    font-size: 13px;
+    color: var(--muted-ink);
+  }
+
+  .to-top {
+    position: fixed;
+    right: 20px;
+    bottom: calc(20px + env(safe-area-inset-bottom, 0px));
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1px solid var(--line);
+    background: var(--bg);
+    color: var(--ink);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(6px);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    z-index: 20;
+  }
+  .to-top.visible { opacity: 1; pointer-events: auto; transform: translateY(0); }
+  .to-top svg { width: 16px; height: 16px; display: block; }
+  @media (prefers-reduced-motion: reduce) {
+    .to-top { transition: none; }
+  }
+
+  /* ---------- Mobile nav (hamburger drawer) ---------- */
+  .nav-toggle-bar { display: none; }
+  @media (max-width: 780px) {
+    .nav-toggle-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 150;
+      background: var(--bg);
+      border-bottom: 1px solid var(--line);
+      padding: 14px 20px;
+      padding-top: calc(14px + env(safe-area-inset-top, 0px));
+    }
+    .nav-toggle-bar .wordmark-mini { font-size: 18px; margin: 0; }
+    .nav-toggle-bar .wordmark-mini a { color: inherit; }
+    .nav-toggle-btn {
+      background: none;
+      border: 1px solid var(--line);
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      color: var(--ink);
+      padding: 0;
+      flex: none;
+    }
+    .nav-toggle-btn svg { width: 20px; height: 20px; display: block; }
+    aside.sidebar {
+      position: fixed;
+      inset: 0;
+      z-index: 200;
+      overflow-y: auto;
+      background: var(--bg);
+      transform: translateX(-100%);
+      transition: transform 0.25s ease;
+      padding-top: calc(20px + env(safe-area-inset-top, 0px));
+    }
+    aside.sidebar.nav-open { transform: translateX(0); }
+    body.nav-locked { overflow: hidden; }
+    .sidebar-close { display: flex; justify-content: flex-end; margin-bottom: 8px; }
+    .sidebar-close button {
+      background: none; border: none; font-size: 28px; line-height: 1; color: var(--ink); cursor: pointer; padding: 4px 8px;
+    }
+  }
+  @media (min-width: 781px) {
+    .sidebar-close { display: none; }
+  }
+</style>
+</head>
+<body>
+<div class="shell">
+
+  <div class="nav-toggle-bar">
+    <p class="wordmark-mini"><a href="index.html">Ernst Koslitsch</a></p>
+    <button class="nav-toggle-btn" id="navToggleBtn" aria-label="Open menu" aria-expanded="false" aria-controls="siteSidebar" type="button">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+
+  <aside class="sidebar" id="siteSidebar">
+    <div class="sidebar-close"><button id="navCloseBtn" aria-label="Close menu" type="button">&times;</button></div>
+
+    <div>
+      <p class="wordmark"><a href="index.html">Ernst Koslitsch</a></p>
+      <p class="practice-line">Yellow Universe &#8212; Vienna</p>
+    </div>
+    <hr class="rule">
+        <nav class="nav-block">
+      <a href="echo-keepers-rotor-part2.html">A Parable for Endings and Beginnings, Part 2: The Colossal Land Animal</a>
+      <a href="cosmic-trigger-respawn.html">Cosmic Trigger &#8211; Respawn</a>
+      <a href="echo-keepers-rotor.html">A Parable for Endings and Beginnings, Part 1: The Giant Bird</a>
+      <a href="transfer-deutschlandsberg.html">TRANSFER</a>
+      <a href="ex-situ.html">EX-SITU</a>
+      <a href="exhibitions.html" class="more">More &#8594;</a>
+    </nav>
+    <hr class="rule">
+    <nav class="nav-block primary">
+      <a href="works.html">Works</a>
+      <a href="exhibitions.html">Exhibitions</a>
+      <a href="studio.html">Studio</a>
+      <a href="cv.html">CV</a>
+    </nav>
+    <hr class="rule">
+        <nav class="nav-block secondary">
+      <a href="index.html">Current / Upcoming</a>
+      <a href="agenda.html">Agenda</a>
+      <a href="press.html">Press</a>
+      <a href="newsletter.html">Newsletter</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="https://www.instagram.com/koslitsch/">Instagram</a>
+    </nav>
+    <div class="sidebar-foot">Vienna, Austria</div>
+  </aside>
+
+  <main>
+    <h1 class="page-title">Page not found</h1>
+    <p class="not-found-text">The page you're looking for doesn't exist or has moved. It may be an old link from an earlier version of this site.</p>
+
+    <nav class="not-found-links">
+      <a href="index.html">Current / Upcoming &#8594;</a>
+      <a href="works.html">Works &#8594;</a>
+      <a href="exhibitions.html">Exhibitions &#8594;</a>
+      <a href="contact.html">Contact &#8594;</a>
+    </nav>
+
+    <footer class="page-foot">
+      Ernst Koslitsch, Vienna<br>
+      Made by Catapult Contemporary, Artist Alliance Network. <a href="https://www.catapult-platform.art/write-us/" style="text-decoration:underline;">Get in touch &#8594;</a>
+    </footer>
+  </main>
+
+</div>
+
+<button class="to-top" id="toTop" aria-label="Back to top" type="button">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+<script>
+  (function () {
+    var btn = document.getElementById('toTop');
+    if (!btn) return;
+    window.addEventListener('scroll', function () {
+      btn.classList.toggle('visible', window.scrollY > 400);
+    }, { passive: true });
+    btn.addEventListener('click', function () {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  })();
+</script>
+<script>
+(function () {
+  var toggleBtn = document.getElementById('navToggleBtn');
+  var closeBtn = document.getElementById('navCloseBtn');
+  var sidebar = document.getElementById('siteSidebar');
+  if (!toggleBtn || !sidebar) return;
+  function openNav() {
+    sidebar.classList.add('nav-open');
+    document.body.classList.add('nav-locked');
+    toggleBtn.setAttribute('aria-expanded', 'true');
+  }
+  function closeNav() {
+    sidebar.classList.remove('nav-open');
+    document.body.classList.remove('nav-locked');
+    toggleBtn.setAttribute('aria-expanded', 'false');
+  }
+  toggleBtn.addEventListener('click', function () {
+    if (sidebar.classList.contains('nav-open')) closeNav(); else openNav();
+  });
+  if (closeBtn) closeBtn.addEventListener('click', closeNav);
+  Array.prototype.forEach.call(sidebar.querySelectorAll('a'), function (a) {
+    a.addEventListener('click', closeNav);
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') closeNav();
+  });
+  window.addEventListener('resize', function () {
+    if (window.innerWidth > 780) closeNav();
+  });
+})();
+</script>
+</body>
+</html>
