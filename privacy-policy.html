@@ -1,0 +1,388 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Privacy Policy &#8212; Ernst Koslitsch</title>
+<meta name="description" content="Privacy policy for koslitsch.com, Ernst Koslitsch, Vienna-based sculptor, Yellow Universe.">
+<link rel="canonical" href="https://koslitsch.com/privacy-policy.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Ernst Koslitsch">
+<meta property="og:title" content="Privacy Policy &#8212; Ernst Koslitsch">
+<meta property="og:description" content="Privacy policy for koslitsch.com, Ernst Koslitsch, Vienna-based sculptor, Yellow Universe.">
+<meta property="og:image" content="https://koslitsch.com/images/artist-portrait.webp">
+<meta property="og:url" content="https://koslitsch.com/privacy-policy.html">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Privacy Policy &#8212; Ernst Koslitsch">
+<meta name="twitter:description" content="Privacy policy for koslitsch.com, Ernst Koslitsch, Vienna-based sculptor, Yellow Universe.">
+<meta name="twitter:image" content="https://koslitsch.com/images/artist-portrait.webp">
+<style>
+  :root {
+    --bg: #ffffff;
+    --ink: #000000;
+    --line: #e6e4e0;
+    --muted: #ccccc8;
+    --muted-ink: #9a9891;
+    color-scheme: light;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.3;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration: none; }
+  img { max-width: 100%; }
+
+  .shell {
+    display: grid;
+    grid-template-columns: 340px 1fr;
+    min-height: 100svh;
+  }
+  @media (max-width: 780px) {
+    .shell { grid-template-columns: 1fr; }
+  }
+
+  .sidebar {
+    padding: 28px 32px 40px;
+    display: flex;
+    flex-direction: column;
+  }
+  @media (max-width: 780px) {
+    .sidebar { padding: 20px 20px 24px; }
+  }
+  .wordmark { font-size: 26px; font-weight: 400; margin: 0; }
+  .practice-line { font-size: 16px; color: var(--muted-ink); margin: 4px 0 0; }
+  .rule { border: none; border-top: 1px solid var(--line); margin: 22px 0; }
+  .nav-block { display: flex; flex-direction: column; gap: 2px; }
+  .nav-block a { font-size: 18px; font-weight: 400; padding: 3px 0; }
+  .nav-block a[aria-current="page"] { color: var(--muted-ink); }
+  .nav-block a.more { color: var(--muted-ink); font-size: 18px; margin-top: 2px; }
+  .nav-block.primary a { font-size: 18px; font-weight: 400; }
+  .nav-block.secondary a { font-size: 16px; font-weight: 400; color: var(--muted-ink); }
+  .nav-block.secondary a:hover { color: var(--ink); }
+  .sidebar-foot { margin-top: auto; padding-top: 20px; font-size: 13px; color: var(--muted-ink); }
+
+  main { padding: 28px 40px 100px; max-width: 1100px; }
+  @media (max-width: 780px) { main { padding: 24px 20px 80px; } }
+
+  h1.page-title {
+    font-size: 34px;
+    font-weight: 400;
+    margin: 0 0 28px;
+    text-wrap: balance;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 20px;
+  }
+
+  .policy-content { max-width: 680px; }
+  .policy-content h2 { font-size: 22px; font-weight: 400; margin: 40px 0 14px; }
+  .policy-content h2:first-child { margin-top: 0; }
+  .policy-content h3 { font-size: 17px; font-weight: 400; margin: 24px 0 10px; }
+  .policy-content h4 { font-size: 15px; font-weight: 400; color: var(--muted-ink); margin: 18px 0 6px; }
+  .policy-content p { font-size: 16px; line-height: 1.55; margin: 0 0 14px; }
+  .policy-content ul { padding-left: 20px; margin: 0 0 14px; }
+  .policy-content li { font-size: 16px; line-height: 1.55; margin: 0 0 8px; }
+  .policy-content a { text-decoration: underline; text-underline-offset: 2px; }
+  .policy-content .org { margin: 0 0 14px; }
+
+  footer.page-foot {
+    margin-top: 60px;
+    padding-top: 18px;
+    border-top: 1px solid var(--line);
+    font-size: 13px;
+    color: var(--muted-ink);
+  }
+
+  .to-top {
+    position: fixed;
+    right: 20px;
+    bottom: calc(20px + env(safe-area-inset-bottom, 0px));
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1px solid var(--line);
+    background: var(--bg);
+    color: var(--ink);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(6px);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    z-index: 20;
+  }
+  .to-top.visible { opacity: 1; pointer-events: auto; transform: translateY(0); }
+  .to-top svg { width: 16px; height: 16px; display: block; }
+  @media (prefers-reduced-motion: reduce) {
+    .to-top { transition: none; }
+  }
+
+  /* ---------- Mobile nav (hamburger drawer) ---------- */
+  .nav-toggle-bar { display: none; }
+  @media (max-width: 780px) {
+    .nav-toggle-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 150;
+      background: var(--bg);
+      border-bottom: 1px solid var(--line);
+      padding: 14px 20px;
+      padding-top: calc(14px + env(safe-area-inset-top, 0px));
+    }
+    .nav-toggle-bar .wordmark-mini { font-size: 18px; margin: 0; }
+    .nav-toggle-bar .wordmark-mini a { color: inherit; }
+    .nav-toggle-btn {
+      background: none;
+      border: 1px solid var(--line);
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      color: var(--ink);
+      padding: 0;
+      flex: none;
+    }
+    .nav-toggle-btn svg { width: 20px; height: 20px; display: block; }
+    aside.sidebar {
+      position: fixed;
+      inset: 0;
+      z-index: 200;
+      overflow-y: auto;
+      background: var(--bg);
+      transform: translateX(-100%);
+      transition: transform 0.25s ease;
+      padding-top: calc(20px + env(safe-area-inset-top, 0px));
+    }
+    aside.sidebar.nav-open { transform: translateX(0); }
+    body.nav-locked { overflow: hidden; }
+    .sidebar-close { display: flex; justify-content: flex-end; margin-bottom: 8px; }
+    .sidebar-close button {
+      background: none; border: none; font-size: 28px; line-height: 1; color: var(--ink); cursor: pointer; padding: 4px 8px;
+    }
+  }
+  @media (min-width: 781px) {
+    .sidebar-close { display: none; }
+  }
+</style>
+</head>
+<body>
+<div class="shell">
+
+  <div class="nav-toggle-bar">
+    <p class="wordmark-mini"><a href="index.html">Ernst Koslitsch</a></p>
+    <button class="nav-toggle-btn" id="navToggleBtn" aria-label="Open menu" aria-expanded="false" aria-controls="siteSidebar" type="button">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+
+  <aside class="sidebar" id="siteSidebar">
+    <div class="sidebar-close"><button id="navCloseBtn" aria-label="Close menu" type="button">&times;</button></div>
+
+    <div>
+      <p class="wordmark"><a href="index.html">Ernst Koslitsch</a></p>
+      <p class="practice-line">Yellow Universe &#8212; Vienna</p>
+    </div>
+    <hr class="rule">
+        <nav class="nav-block">
+      <a href="echo-keepers-rotor-part2.html">A Parable for Endings and Beginnings, Part 2: The Colossal Land Animal</a>
+      <a href="cosmic-trigger-respawn.html">Cosmic Trigger &#8211; Respawn</a>
+      <a href="echo-keepers-rotor.html">A Parable for Endings and Beginnings, Part 1: The Giant Bird</a>
+      <a href="transfer-deutschlandsberg.html">TRANSFER</a>
+      <a href="ex-situ.html">EX-SITU</a>
+      <a href="exhibitions.html" class="more">More &#8594;</a>
+    </nav>
+    <hr class="rule">
+    <nav class="nav-block primary">
+      <a href="works.html">Works</a>
+      <a href="exhibitions.html">Exhibitions</a>
+      <a href="studio.html">Studio</a>
+      <a href="cv.html">CV</a>
+    </nav>
+    <hr class="rule">
+        <nav class="nav-block secondary">
+      <a href="index.html">Current / Upcoming</a>
+      <a href="agenda.html">Agenda</a>
+      <a href="press.html">Press</a>
+      <a href="newsletter.html">Newsletter</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="https://www.instagram.com/koslitsch/">Instagram</a>
+    </nav>
+    <div class="sidebar-foot">Vienna, Austria</div>
+  </aside>
+
+  <main>
+    <h1 class="page-title">Privacy Policy</h1>
+
+    <div class="policy-content">
+
+      <h2>1. An overview of data protection</h2>
+
+      <h3>General information</h3>
+      <p>The following information will provide you with an easy to navigate overview of what will happen with your personal data when you visit this website. The term &ldquo;personal data&rdquo; comprises all data that can be used to personally identify you. For detailed information about the subject matter of data protection, please consult our Data Protection Declaration, which we have included beneath this copy.</p>
+
+      <h3>Data recording on this website</h3>
+      <h4>Who is the responsible party for the recording of data on this website (i.e., the &ldquo;controller&rdquo;)?</h4>
+      <p>The data on this website is processed by the operator of the website, whose contact information is available under section &ldquo;Information about the responsible party (referred to as the &lsquo;controller&rsquo; in the GDPR)&rdquo; in this Privacy Policy.</p>
+
+      <h4>How do we record your data?</h4>
+      <p>We collect your data as a result of your sharing of your data with us. This may, for instance, be information you enter into our contact form.</p>
+      <p>Other data shall be recorded by our IT systems automatically or after you consent to its recording during your website visit. This data comprises primarily technical information (e.g., web browser, operating system, or time the site was accessed). This information is recorded automatically when you access this website.</p>
+
+      <h4>What are the purposes we use your data for?</h4>
+      <p>A portion of the information is generated to guarantee the error free provision of the website. Other data may be used to analyze your user patterns. If contracts can be concluded or initiated via the website, the transmitted data will also be processed for contract offers, orders or other order enquiries.</p>
+
+      <h4>What rights do you have as far as your information is concerned?</h4>
+      <p>You have the right to receive information about the source, recipients, and purposes of your archived personal data at any time without having to pay a fee for such disclosures. You also have the right to demand that your data are rectified or eradicated. If you have consented to data processing, you have the option to revoke this consent at any time, which shall affect all future data processing. Moreover, you have the right to demand that the processing of your data be restricted under certain circumstances. Furthermore, you have the right to log a complaint with the competent supervising agency.</p>
+      <p>Please do not hesitate to contact us at any time if you have questions about this or any other data protection related issues.</p>
+
+      <h2>2. Hosting</h2>
+      <p>We are hosting the content of our website at the following provider:</p>
+
+      <h3>External Hosting</h3>
+      <p>This website is hosted externally. Personal data collected on this website are stored on the servers of the host. These may include, but are not limited to, IP addresses, contact requests, metadata and communications, contract information, contact information, names, web page access, and other data generated through a web site.</p>
+      <p>The external hosting serves the purpose of fulfilling the contract with our potential and existing customers (Art. 6(1)(b) GDPR) and in the interest of secure, fast, and efficient provision of our online services by a professional provider (Art. 6(1)(f) GDPR). If appropriate consent has been obtained, the processing is carried out exclusively on the basis of Art. 6 (1)(a) GDPR and &sect; 25 (1) TDDDG, insofar the consent includes the storage of cookies or the access to information in the user's end device (e.g., device fingerprinting) within the meaning of the TDDDG. This consent can be revoked at any time.</p>
+      <p>Our host(s) will only process your data to the extent necessary to fulfil its performance obligations and to follow our instructions with respect to such data.</p>
+      <p>We are using the following host(s):</p>
+      <p class="org">Netlify, Inc.<br>101 2nd Street<br>San Francisco, CA 94105<br>USA</p>
+
+      <h4>Data processing</h4>
+      <p>We have concluded a data processing agreement (DPA) for the use of the above-mentioned service. This is a contract mandated by data privacy laws that guarantees that they process personal data of our website visitors only based on our instructions and in compliance with the GDPR.</p>
+
+      <h3>Contact form and newsletter signup</h3>
+      <p>For the contact form and the newsletter signup on this website, we use the online form-building service Tally, provided by:</p>
+      <p class="org">Tally BV<br>Sint-Pietersnieuwstraat 11<br>9000 Ghent, Belgium</p>
+      <p>When you fill out the contact form, we process the name, e-mail address and message you provide. When you sign up for the newsletter, we process the name and e-mail address you provide. This data is submitted directly to Tally's servers and forwarded to us by e-mail; according to Tally, it is stored on servers located within the European Union.</p>
+      <p>The legal basis for this processing is your consent (Art. 6(1)(a) GDPR) and, for the contact form, our legitimate interest in responding to your enquiry (Art. 6(1)(f) GDPR). More information is available in Tally's own privacy policy at <a href="https://tally.so/help/privacy-policy">tally.so/help/privacy-policy</a>.</p>
+
+      <h2>3. General information and mandatory information</h2>
+
+      <h3>Data protection</h3>
+      <p>The operators of this website and its pages take the protection of your personal data very seriously. Hence, we handle your personal data as confidential information and in compliance with the statutory data protection regulations and this Data Protection Declaration.</p>
+      <p>Whenever you use this website, a variety of personal information will be collected. Personal data comprises data that can be used to personally identify you. This Data Protection Declaration explains which data we collect as well as the purposes we use this data for. It also explains how, and for which purpose the information is collected.</p>
+      <p>We herewith advise you that the transmission of data via the Internet (i.e., through e-mail communications) may be prone to security gaps. It is not possible to completely protect data against third-party access.</p>
+
+      <h3>Information about the responsible party (referred to as the &ldquo;controller&rdquo; in the GDPR)</h3>
+      <p>The data processing controller on this website is:</p>
+      <p class="org">Ernst Koslitsch<br>Einzelunternehmer<br>Catapult-Munchies Art Club<br>Edmund Weiss Gasse 3/4<br>1180 Wien</p>
+      <p class="org">Phone: +43 (0) 6763502004<br>E-mail: koslitsch@pm.me</p>
+      <p>The controller is the natural person or legal entity that single-handedly or jointly with others makes decisions as to the purposes of and resources for the processing of personal data (e.g., names, e-mail addresses, etc.).</p>
+
+      <h3>Storage duration</h3>
+      <p>Unless a more specific storage period has been specified in this privacy policy, your personal data will remain with us until the purpose for which it was collected no longer applies. If you assert a justified request for deletion or revoke your consent to data processing, your data will be deleted, unless we have other legally permissible reasons for storing your personal data (e.g., tax or commercial law retention periods); in the latter case, the deletion will take place after these reasons cease to apply.</p>
+
+      <h3>General information on the legal basis for the data processing on this website</h3>
+      <p>If you have consented to data processing, we process your personal data on the basis of Art. 6(1)(a) GDPR or Art. 9 (2)(a) GDPR, if special categories of data are processed according to Art. 9 (1) DSGVO. In the case of explicit consent to the transfer of personal data to third countries, the data processing is also based on Art. 49 (1)(a) GDPR. If you have consented to the storage of cookies or to the access to information in your end device (e.g., via device fingerprinting), the data processing is additionally based on &sect; 25 (1) TDDDG. The consent can be revoked at any time. If your data is required for the fulfillment of a contract or for the implementation of pre-contractual measures, we process your data on the basis of Art. 6(1)(b) GDPR. Furthermore, if your data is required for the fulfillment of a legal obligation, we process it on the basis of Art. 6(1)(c) GDPR. Furthermore, the data processing may be carried out on the basis of our legitimate interest according to Art. 6(1)(f) GDPR. Information on the relevant legal basis in each individual case is provided in the following paragraphs of this privacy policy.</p>
+
+      <h3>Recipients of personal data</h3>
+      <p>In the scope of our business activities, we cooperate with various external parties. In some cases, this also requires the transfer of personal data to these external parties. We only disclose personal data to external parties if this is required as part of the fulfillment of a contract, if we are legally obligated to do so (e.g., disclosure of data to tax authorities), if we have a legitimate interest in the disclosure pursuant to Art. 6 (1)(f) GDPR, or if another legal basis permits the disclosure of this data. When using processors, we only disclose personal data of our customers on the basis of a valid contract on data processing. In the case of joint processing, a joint processing agreement is concluded.</p>
+
+      <h3>Revocation of your consent to the processing of data</h3>
+      <p>A wide range of data processing transactions are possible only subject to your express consent. You can also revoke at any time any consent you have already given us. This shall be without prejudice to the lawfulness of any data collection that occurred prior to your revocation.</p>
+
+      <h3>Right to object to the collection of data in special cases; right to object to direct advertising (Art. 21 GDPR)</h3>
+      <p>In the event that data are processed on the basis of Art. 6(1)(e) or (f) GDPR, you have the right to at any time object to the processing of your personal data based on grounds arising from your unique situation. This also applies to any profiling based on these provisions. To determine the legal basis, on which any processing of data is based, please consult this Data Protection Declaration. If you log an objection, we will no longer process your affected personal data, unless we are in a position to present compelling protection worthy grounds for the processing of your data, that outweigh your interests, rights and freedoms or if the purpose of the processing is the claiming, exercising or defence of legal entitlements (objection pursuant to Art. 21(1) GDPR).</p>
+      <p>If your personal data is being processed in order to engage in direct advertising, you have the right to object to the processing of your affected personal data for the purposes of such advertising at any time. This also applies to profiling to the extent that it is affiliated with such direct advertising. If you object, your personal data will subsequently no longer be used for direct advertising purposes (objection pursuant to Art. 21(2) GDPR).</p>
+
+      <h3>Right to log a complaint with the competent supervisory agency</h3>
+      <p>In the event of violations of the GDPR, data subjects are entitled to log a complaint with a supervisory agency, in particular in the member state where they usually maintain their domicile, place of work or at the place where the alleged violation occurred. The right to log a complaint is in effect regardless of any other administrative or court proceedings available as legal recourses.</p>
+
+      <h3>Right to data portability</h3>
+      <p>You have the right to have data that we process automatically on the basis of your consent or in fulfillment of a contract handed over to you or to a third party in a common, machine-readable format. If you should demand the direct transfer of the data to another controller, this will be done only if it is technically feasible.</p>
+
+      <h3>Information about, rectification and eradication of data</h3>
+      <p>Within the scope of the applicable statutory provisions, you have the right to demand information about your archived personal data, their source and recipients as well as the purpose of the processing of your data at any time. You may also have a right to have your data rectified or eradicated. If you have questions about this subject matter or any other questions about personal data, please do not hesitate to contact us at any time.</p>
+
+      <h3>Right to demand processing restrictions</h3>
+      <p>You have the right to demand the imposition of restrictions as far as the processing of your personal data is concerned. To do so, you may contact us at any time. The right to demand restriction of processing applies in the following cases:</p>
+      <ul>
+        <li>In the event that you should dispute the correctness of your data archived by us, we will usually need some time to verify this claim. During the time that this investigation is ongoing, you have the right to demand that we restrict the processing of your personal data.</li>
+        <li>If the processing of your personal data was/is conducted in an unlawful manner, you have the option to demand the restriction of the processing of your data instead of demanding the eradication of this data.</li>
+        <li>If we do not need your personal data any longer and you need it to exercise, defend or claim legal entitlements, you have the right to demand the restriction of the processing of your personal data instead of its eradication.</li>
+        <li>If you have raised an objection pursuant to Art. 21(1) GDPR, your rights and our rights will have to be weighed against each other. As long as it has not been determined whose interests prevail, you have the right to demand a restriction of the processing of your personal data.</li>
+      </ul>
+      <p>If you have restricted the processing of your personal data, these data &#8211; with the exception of their archiving &#8211; may be processed only subject to your consent or to claim, exercise or defend legal entitlements or to protect the rights of other natural persons or legal entities or for important public interest reasons cited by the European Union or a member state of the EU.</p>
+
+      <h2>4. Newsletter</h2>
+      <h3>Newsletter data</h3>
+      <p>If you would like to subscribe to the newsletter offered on this website, we will need from you an e-mail address as well as information that allow us to verify that you are the owner of the e-mail address provided and consent to the receipt of the newsletter. We use such data for the sending of the requested information and shall not share such data with any third parties beyond the newsletter service provider named above. Within the scope of newsletter campaigns, we may analyze various data (e.g., opening time, IP address, device information, clicked links, and any subsequent actions).</p>
+      <p>The processing of the information entered into the newsletter subscription form shall occur exclusively on the basis of your consent (Art. 6(1)(a) GDPR). You may revoke the consent you have given to the archiving of data, the e-mail address, and the use of this information for the sending of the newsletter at any time. This shall be without prejudice to the lawfulness of any data processing transactions that have taken place to date.</p>
+      <p>The data deposited with us for the purpose of subscribing to the newsletter will be stored by us until you unsubscribe from the newsletter or the newsletter service provider and deleted from the newsletter distribution list after you unsubscribe from the newsletter or after the purpose has ceased to apply. We reserve the right to delete or block e-mail addresses from our newsletter distribution list at our own discretion within the scope of our legitimate interest in accordance with Art. 6(1)(f) GDPR.</p>
+      <p>Data stored for other purposes with us remain unaffected.</p>
+      <p>After you unsubscribe from the newsletter distribution list, your e-mail address may be stored by us or the newsletter service provider in a blacklist, if such action is necessary to prevent future mailings. The data from the blacklist is used only for this purpose and not merged with other data. This serves both your interest and our interest in complying with the legal requirements when sending newsletters (legitimate interest within the meaning of Art. 6(1)(f) GDPR). The storage in the blacklist is indefinite. You may object to the storage if your interests outweigh our legitimate interest.</p>
+
+    </div>
+
+    <footer class="page-foot">
+      Ernst Koslitsch, Vienna<br>
+      Made by Catapult Contemporary, Artist Alliance Network. <a href="https://www.catapult-platform.art/write-us/" style="text-decoration:underline;">Get in touch &#8594;</a> &#183; <a href="site-notice.html">Site notice</a> &#183; <a href="privacy-policy.html" aria-current="page">Privacy policy</a>
+    </footer>
+  </main>
+
+</div>
+
+<button class="to-top" id="toTop" aria-label="Back to top" type="button">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+<script>
+  (function () {
+    var btn = document.getElementById('toTop');
+    if (!btn) return;
+    window.addEventListener('scroll', function () {
+      btn.classList.toggle('visible', window.scrollY > 400);
+    }, { passive: true });
+    btn.addEventListener('click', function () {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  })();
+</script>
+<script>
+(function () {
+  var toggleBtn = document.getElementById('navToggleBtn');
+  var closeBtn = document.getElementById('navCloseBtn');
+  var sidebar = document.getElementById('siteSidebar');
+  if (!toggleBtn || !sidebar) return;
+  function openNav() {
+    sidebar.classList.add('nav-open');
+    document.body.classList.add('nav-locked');
+    toggleBtn.setAttribute('aria-expanded', 'true');
+  }
+  function closeNav() {
+    sidebar.classList.remove('nav-open');
+    document.body.classList.remove('nav-locked');
+    toggleBtn.setAttribute('aria-expanded', 'false');
+  }
+  toggleBtn.addEventListener('click', function () {
+    if (sidebar.classList.contains('nav-open')) closeNav(); else openNav();
+  });
+  if (closeBtn) closeBtn.addEventListener('click', closeNav);
+  Array.prototype.forEach.call(sidebar.querySelectorAll('a'), function (a) {
+    a.addEventListener('click', closeNav);
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') closeNav();
+  });
+  window.addEventListener('resize', function () {
+    if (window.innerWidth > 780) closeNav();
+  });
+})();
+</script>
+</body>
+</html>
