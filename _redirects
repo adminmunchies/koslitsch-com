@@ -2,6 +2,10 @@
 # Angelegt 2026-09-19. Wo kein inhaltlich passendes Gegenstück existiert: Fallback Homepage (wie von Ernst vorgegeben).
 # Quelle der URL-Liste: Google Search Console, Page indexing > Not found (404), 24 Eintraege.
 
+# -- URL-Konsistenz: clean URL (ohne .html) auf die kanonische .html-Version, --
+# -- damit Google nicht die falsche Variante als eigenes Canonical waehlt. --
+/transfer-deutschlandsberg                                                         /transfer-deutschlandsberg.html             301
+
 # -- Konkrete Treffer (Datei existiert inhaltlich passend) --
 /IT-DOESN-T-HAVE-TO-CONCERN-YOU-WHAT-I-BELIEVE-Exhibition                          /domino-no-concern.html                     301
 /Parallel-Vienna-Visit-the-Art-Fair                                                /parallel-vienna-semmelweis-klinik.html     301
