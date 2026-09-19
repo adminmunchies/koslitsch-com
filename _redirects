@@ -1,0 +1,33 @@
+# Redirects from alten Cargo-Ära-URLs (Google-Index, siehe GSC "Not found (404)") auf die aktuelle v2-Seite.
+# Angelegt 2026-09-19. Wo kein inhaltlich passendes Gegenstück existiert: Fallback Homepage (wie von Ernst vorgegeben).
+# Quelle der URL-Liste: Google Search Console, Page indexing > Not found (404), 24 Eintraege.
+
+# -- Konkrete Treffer (Datei existiert inhaltlich passend) --
+/IT-DOESN-T-HAVE-TO-CONCERN-YOU-WHAT-I-BELIEVE-Exhibition                          /domino-no-concern.html                     301
+/Parallel-Vienna-Visit-the-Art-Fair                                                /parallel-vienna-semmelweis-klinik.html     301
+/Neue-Galerie-Graz-Exhibition-A-Playground-Guide-to-getting-Lost-Lina              /playground-guide-neue-galerie-graz.html    301
+/Spark-Art-Fair-Vienna-Raum-mit-Licht-Gallery-with-a-solo-Presentation             /spark-art-fair-vienna.html                 301
+/About-Ernst-Koslitsch                                                             /about.html                                 301
+/contact-form                                                                      /contact.html                               301
+/imprint                                                                           /site-notice.html                           301
+/privacy-policy                                                                    /privacy-policy.html                        301
+
+# -- Plausible strukturelle Treffer (kein 1:1-Textmatch, aber naheliegendstes Gegenstueck) --
+/Collection-of-Artworks-by-Ernst-Koslitsch-Index                                   /works.html                                 301
+/store/artworks/                                                                   /works.html                                 301
+/Rotor-Graz-Group-Exhibition-now                                                   /beings-and-creatures-rotor.html            301
+
+# -- Kein passendes Gegenstueck gefunden, Fallback Homepage --
+/Wood-in-contemporary-art                                                          /                                            301
+/The-Arrival-Installation-based-on-True-Events                                     /                                            301
+/Constructing-Mythology-The-Sculpture-Work-of-Ernst-Koslitsch                      /                                            301
+/Ernst-Koslitsch-Artist-and-his-uncharted-Land-Yellow-Universe                     /                                            301
+/The-first-5000-years-contemporary-wood-sculpture-now                              /                                            301
+/A-Soul-to-Squeeze-Installation-by-Ernst-Koslitsch                                 /                                            301
+/Les-Nouveaux-Riches-Magazine-Studio-Visit-and-Artist-Interview                    /                                            301
+/Information                                                                       /                                            301
+/Gut-Oggau-Wildfire-Series-by-Ernst-Koslitsch                                      /                                            301
+/contemporary-painting-now-by-Ernst-Koslitsch                                      /                                            301
+/Munchies-Art-Club-in-Conversation-with-Artist-Ernst-Koslitsch-about               /                                            301
+/Land-of-Confusion-Adventure-in-a-Box-Sculpture-now                                /                                            301
+/new-sculptor-now                                                                  /                                            301
